@@ -11,10 +11,10 @@ export const todoSlice = createSlice({
     name: 'todo',
     initialState,
     reducers: {
-        todoAdded: (state, action) => {
+        todoAdded(state, action) {
             state.push(action.payload)
         },
-        todoDeleted: (state, action) => {
+        todoDeleted(state, action) {
             const { id } = action.payload;
             const existingTodo = state.find(todo => todo.id === id)
             if (existingTodo) {
